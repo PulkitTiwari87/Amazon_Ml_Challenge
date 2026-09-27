@@ -1,0 +1,310 @@
+{
+  "document_type": "Amazon ML Challenge 2026 — video transcript and consolidated source notes",
+  "generated_from": {
+    "video": {
+      "filename": "6ab509c5b7036_ml_challenge_2026_video.mp4",
+      "duration_seconds": 355.872,
+      "transcription_status": "not_available_in_current_execution_environment",
+      "transcription_note": "The uploaded MP4 contains an H.264 video stream and AAC mono audio stream, but no embedded subtitle/caption stream. A speech-to-text engine was not available in the current execution environment, so a verbatim spoken-word transcript cannot be truthfully fabricated. The transcript field is therefore explicitly marked unavailable rather than inventing dialogue.",
+      "metadata": {
+        "format": {
+          "filename": "/mnt/data/6ab509c5b7036_ml_challenge_2026_video.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "355.872000",
+          "size": "13720907",
+          "bit_rate": "308445",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.102"
+          }
+        },
+        "streams": [
+          {
+            "index": 0,
+            "codec_type": "video",
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "sample_rate": null,
+            "channels": null,
+            "duration_seconds": "355.866667",
+            "frame_rate": "30/1"
+          },
+          {
+            "index": 1,
+            "codec_type": "audio",
+            "codec_name": "aac",
+            "width": null,
+            "height": null,
+            "sample_rate": "24000",
+            "channels": 1,
+            "duration_seconds": "355.872000",
+            "frame_rate": "0/0"
+          }
+        ]
+      }
+    },
+    "problem_statement_pdf": {
+      "filename": "amazon_ml_challenge_problem_statement.pdf",
+      "source_coverage": "Pages 1-7, including parsed text supplied with the upload"
+    },
+    "guidelines_pdf": {
+      "filename": "guidelines_and_key_instructions_amazon_ml_challenge_2026.pdf",
+      "source_coverage": "Pages 1-2, including parsed text supplied with the upload"
+    }
+  },
+  "video_transcript": {
+    "status": "unavailable_without_speech_to_text",
+    "complete_verbatim_transcript": null,
+    "reason": "No caption/subtitle track is embedded in the MP4, and no local ASR model/service was available. This JSON intentionally does not invent a transcript.",
+    "what_was_verified": [
+      "Video duration is approximately 5 minutes 56 seconds.",
+      "Video contains H.264/AVC video.",
+      "Video contains AAC mono audio at 24 kHz.",
+      "The challenge PDFs provide the authoritative textual problem statement and rules."
+    ]
+  },
+  "consolidated_problem_information": {
+    "problem": {
+      "name": "Business Entity Resolution Challenge",
+      "definition": "Determine which records from Source 2 and Source 3 refer to the same real-world business as each Source 1 reference record.",
+      "source1_role": "Deduplicated reference source",
+      "matching_cardinality": "A Source 1 entity may match zero, one, or many Source 2/Source 3 records.",
+      "citation": "Problem statement page 1, lines 2-12"
+    },
+    "file_format": {
+      "format": "TSV",
+      "separator": "\\t",
+      "warning": "Reading a TSV without an explicit tab separator can silently create a single column.",
+      "citation": "Problem statement page 1, lines 14-20"
+    },
+    "record_schema": {
+      "columns": [
+        {
+          "name": "entity_id",
+          "description": "Unique identifier; prefix indicates source: S1-, S2-, or S3-."
+        },
+        {
+          "name": "business_name",
+          "description": "May contain abbreviations, legal suffixes, typos and transliterations."
+        },
+        {
+          "name": "business_address",
+          "description": "May contain partial addresses, formatting variations, missing components and landmark-based references."
+        },
+        {
+          "name": "country",
+          "description": "Country label; training contains US and India, while test additionally contains France."
+        }
+      ],
+      "citation": "Problem statement pages 1-2, lines 22-38"
+    },
+    "open_set_country_requirement": {
+      "rule": "Do not hard-code, filter or one-hot the pipeline to only US and India.",
+      "reason": "France appears in the test set and every test entity must appear in the submission.",
+      "citation": "Problem statement page 2, lines 31-36"
+    },
+    "ground_truth": {
+      "file": "train_ground_truth.tsv",
+      "columns": [
+        "source1_entity_id",
+        "matched_entity_ids"
+      ],
+      "matched_entity_ids_format": "Comma-separated Source 2 and/or Source 3 IDs; empty when there are no matches.",
+      "citation": "Problem statement page 2, lines 39-42"
+    },
+    "noise_patterns": {
+      "business_name": [
+        "Abbreviations such as Corp/Corporation and Pvt/Private and Ltd/Limited",
+        "Legal suffix inconsistencies",
+        "DBA/trade names",
+        "Punctuation differences",
+        "Ampersand versus 'and'",
+        "Word-order transpositions",
+        "Typos"
+      ],
+      "business_address": [
+        "Abbreviations such as Rd/Road and St/Street",
+        "Transliteration variants",
+        "Missing components such as PIN code or state",
+        "Landmark-based references such as 'Near SBI ATM'",
+        "Municipal numbering variations",
+        "Component reordering"
+      ],
+      "citation": "Problem statement page 2, lines 43-49"
+    },
+    "datasets": {
+      "training": [
+        "dataset/train/train_source1.tsv",
+        "dataset/train/train_source2.tsv",
+        "dataset/train/train_source3.tsv",
+        "dataset/train/train_ground_truth.tsv"
+      ],
+      "test": [
+        "dataset/test/test_source1.tsv",
+        "dataset/test/test_source2.tsv",
+        "dataset/test/test_source3.tsv"
+      ],
+      "test_ground_truth": "Not provided.",
+      "citation": "Problem statement pages 2-3, lines 50-67"
+    },
+    "outputs": {
+      "matching_results": {
+        "filename": "output/matching_results.tsv",
+        "purpose": "Final entity matches; leaderboard-scored.",
+        "columns": [
+          "source1_entity_id",
+          "matched_entity_ids"
+        ],
+        "rules": [
+          "Exactly one row for every Source 1 test entity",
+          "Empty matched_entity_ids for singletons",
+          "No duplicate IDs within a list",
+          "Only existing Source 2/Source 3 test IDs may be referenced"
+        ]
+      },
+      "candidate_pairs": {
+        "filename": "output/candidate_pairs.tsv",
+        "purpose": "The final candidate set actually fed into the matching model after all blocking stages.",
+        "columns": [
+          "source1_entity_id",
+          "candidate_entity_ids"
+        ],
+        "rules": [
+          "One row per Source 1 entity",
+          "Empty candidate list when blocking finds no candidates",
+          "Only Source 2/Source 3 IDs",
+          "No duplicates",
+          "Every final match must also appear in this candidate set"
+        ]
+      },
+      "citation": "Problem statement pages 3-4, lines 68-118"
+    },
+    "validator": {
+      "command": "python3 utils/validate_submission.py --matching output/matching_results.tsv --candidate output/candidate_pairs.tsv --test-dir dataset/test",
+      "purpose": "Checks output-format and submission rules; does not calculate the score.",
+      "citation": "Problem statement page 4, lines 119-127"
+    },
+    "final_submission_package": {
+      "structure": [
+        "<team_name>_submission.zip",
+        "output/matching_results.tsv",
+        "output/candidate_pairs.tsv",
+        "code/business_entity_resolution/src/",
+        "code/business_entity_resolution/README.md",
+        "code/business_entity_resolution/requirements.txt",
+        "Documentation_template.md"
+      ],
+      "reproducibility_requirement": "The supplied code must reproduce both output files from the training/test data.",
+      "methodology_document_topics": [
+        "Methodology used",
+        "Candidate generation/blocking strategy",
+        "Model architecture and feature engineering",
+        "Other relevant approach information"
+      ],
+      "citation": "Problem statement pages 5-7, lines 128-155 and 193-211"
+    },
+    "constraints": {
+      "output": [
+        "Must follow the specified format exactly.",
+        "Every Source 1 test entity must be included.",
+        "No self-matches to Source 1.",
+        "No nonexistent test IDs.",
+        "No duplicate entity IDs or duplicate Source 1 rows."
+      ],
+      "model": "Final model must be MIT or Apache 2.0 licensed and up to 8 billion parameters.",
+      "external_data_lookup": {
+        "prohibited": [
+          "Commercial entity-resolution APIs/services",
+          "Government business-registration lookups",
+          "Geocoding APIs",
+          "External internet-based business identity lookup",
+          "External data augmentation"
+        ],
+        "principle": "Use only the provided challenge data for entity resolution."
+      },
+      "citation": "Problem statement pages 5-7, lines 156-166 and 212-225"
+    },
+    "evaluation": {
+      "metric": "Macro-averaged F_0.5",
+      "formula": "F_0.5 = (1.25 × Precision × Recall) / (0.25 × Precision + Recall)",
+      "properties": [
+        "Calculated per Source 1 entity and then averaged.",
+        "Precision is weighted more heavily than recall.",
+        "False merges are more damaging than missed links.",
+        "Correctly predicting a singleton with an empty match list earns 1.0 for that entity.",
+        "Predicting a match for a true singleton earns 0.0 for that entity."
+      ],
+      "citation": "Problem statement page 6, lines 167-185"
+    },
+    "leaderboards": {
+      "public": "Uses a subset of the test set during the challenge for feedback.",
+      "private": "Uses the remaining test subset after the challenge.",
+      "final_rankings": "Based on the private leaderboard.",
+      "citation": "Problem statement page 6, lines 186-192"
+    },
+    "challenge_tips_from_source": [
+      "Invest in strong blocking/candidate generation because it determines the recall ceiling.",
+      "Explore Jaccard, Levenshtein and TF-IDF cosine for name and address matching.",
+      "Pay attention to country-specific address patterns.",
+      "Consider the precision-recall trade-off because F_0.5 is precision-heavy.",
+      "Do not neglect singletons."
+    ],
+    "citation": "Problem statement page 7, lines 226-236"
+  },
+  "guidelines_and_key_instructions": {
+    "challenge_window": {
+      "start": "2026-09-25 00:00 IST",
+      "end": "2026-09-27 23:59 IST"
+    },
+    "daily_submission_limit": 5,
+    "submission_period_days": 3,
+    "required_artifacts_for_best_solution": [
+      "1-2 page document explaining ML approach, models, experiments and conclusion",
+      "Source code for experiments, training and inference with proper comments"
+    ],
+    "version_history": "Maintain version history of submissions; final source code may be requested later.",
+    "leaderboards": [
+      "Public",
+      "Private"
+    ],
+    "top_100_followup_information": [
+      "Methodology used",
+      "Candidate generation/blocking strategy",
+      "Model architecture and feature engineering",
+      "Other relevant information"
+    ],
+    "access_rules": [
+      "Desktop or laptop only.",
+      "No simultaneous logins; one laptop/desktop per participant.",
+      "Simultaneous logins may result in termination/error."
+    ],
+    "technical_issue_guidance": [
+      "Clear browser cache.",
+      "Try another browser or incognito.",
+      "Try another internet connection.",
+      "For support, email support@unstop.com with a screenshot and registered email ID."
+    ],
+    "fair_play": "Cheating, plagiarism, multiple challenge IDs and unfair practices are prohibited.",
+    "citation": "Guidelines PDF pages 1-2, lines 2-35 and 38-58"
+  },
+  "source_boundaries": {
+    "directly_supported_by_uploaded_sources": [
+      "All problem-definition, schema, noise-pattern, output, evaluation, submission-package, fair-play and challenge-guideline information in this JSON.",
+      "Video file technical metadata."
+    ],
+    "not_claimed_as_verified": [
+      "A verbatim spoken-word transcript of the MP4.",
+      "Any dataset statistics from train/test TSV files, because those TSV files have not been uploaded in this conversation."
+    ],
+    "inference_policy": "No missing transcript wording or dataset facts have been invented."
+  }
+}

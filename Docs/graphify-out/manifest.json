@@ -1,0 +1,62 @@
+{
+  "6ab10eb3b23ba_student_resource/__MACOSX/student_resource/utils/._validate_submission.py": {
+    "mtime": 1789976545.0,
+    "seen": 1790351031.9593503,
+    "ast_hash": "fb3eef179abbe72c2f4443a79eff787d",
+    "semantic_hash": "fb3eef179abbe72c2f4443a79eff787d"
+  },
+  "6ab10eb3b23ba_student_resource/student_resource/utils/validate_submission.py": {
+    "mtime": 1789976545.0,
+    "seen": 1790351031.9593544,
+    "ast_hash": "694b3b34ace720c0e02a78238d18dd0d",
+    "semantic_hash": "694b3b34ace720c0e02a78238d18dd0d"
+  },
+  "amazon_ml_challenge_2026_complete_video_and_source_notes.json": {
+    "mtime": 1790348788.964693,
+    "seen": 1790351031.959356,
+    "ast_hash": "a6ed74463c1981bf8309fb7cc4cef5f3",
+    "semantic_hash": "a6ed74463c1981bf8309fb7cc4cef5f3"
+  },
+  "6ab10eb3b23ba_student_resource/student_resource/Documentation_template.md": {
+    "mtime": 1789967894.0,
+    "seen": 1790351031.959357,
+    "ast_hash": "4885308a800c6e8746e5ef2e751481c9",
+    "semantic_hash": "4885308a800c6e8746e5ef2e751481c9"
+  },
+  "6ab10eb3b23ba_student_resource/student_resource/README.md": {
+    "mtime": 1789979752.0,
+    "seen": 1790351031.9593582,
+    "ast_hash": "72c51a23dbd298005e1eb89639176485",
+    "semantic_hash": "72c51a23dbd298005e1eb89639176485"
+  },
+  "Amazon ML Challenge Forensic Analysis.md": {
+    "mtime": 1790350445.9447217,
+    "seen": 1790351031.9593587,
+    "ast_hash": "20591b20a1538df7f1b6a1db82a23d8f",
+    "semantic_hash": "20591b20a1538df7f1b6a1db82a23d8f"
+  },
+  "6ab5628d5a817_amazon_ml_challenge_problem_statement.pdf": {
+    "mtime": 1790345378.6478138,
+    "seen": 1790351031.9593592,
+    "ast_hash": "642992356ff340762d4a906ed56265b5",
+    "semantic_hash": "642992356ff340762d4a906ed56265b5"
+  },
+  "6ab56657b4f1a_guidelines_and_key_instructions_amazon_ml_challenge_2026.pdf": {
+    "mtime": 1790345383.5216181,
+    "seen": 1790351031.95936,
+    "ast_hash": "4c1db73da8a88d55826f65fc2c5d8d35",
+    "semantic_hash": "4c1db73da8a88d55826f65fc2c5d8d35"
+  },
+  "6ab509c5b7036_ml_challenge_2026_video.mp4": {
+    "mtime": 1790347605.2406292,
+    "seen": 1790351031.9593606,
+    "ast_hash": "bcf4282be42732fdae68eb85d6393e85",
+    "semantic_hash": "bcf4282be42732fdae68eb85d6393e85"
+  },
+  "AMAZON_ML_CHALLENGE_MASTER.md": {
+    "mtime": 1790351734.3500247,
+    "seen": 1790352096.4937427,
+    "ast_hash": "d97aa10d97b3194219462af6f69c42f6",
+    "semantic_hash": "d97aa10d97b3194219462af6f69c42f6"
+  }
+}
